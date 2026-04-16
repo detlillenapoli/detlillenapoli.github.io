@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="nn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Det Lille Napoli | Restaurant og Pizzabar i Ørsta</title>
+    <meta name="description" content="Autentisk pizza, pasta og a la carte i hjartet av Ørsta. Ring 93676087 for å bestille takeaway eller reservere bord!">
+    <style>
+        /* Grunnleggande design og fargar */
+        :root {
+            --red: #c62828;
+            --green: #2e7d32;
+            --white: #ffffff;
+            --dark: #333333;
+            --light-bg: #f9f9f9;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            color: var(--dark);
+            background-color: var(--light-bg);
+            line-height: 1.6;
+            padding-bottom: 70px; /* Plass til mobil-knapp */
+        }
+
+        /* Navigasjon */
+        header {
+            background-color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: var(--red);
+            text-decoration: none;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--dark);
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover { color: var(--green); }
+
+        /* Hero-seksjon (Forside) */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--white);
+            padding: 0 20px;
+            margin-top: 60px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        .btn {
+            background-color: var(--red);
+            color: var(--white);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover { background-color: #b71c1c; }
+
+        /* Seksjonar generelt */
+        section {
+            padding: 80px 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--green);
+        }
+
+        /* Meny-grid */
+        .menu-category { margin-bottom: 40px; }
+        .menu-category h3 {
+            border-bottom: 2px solid var(--red);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .menu-item {
+            background: var(--white);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .menu-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .menu-desc { font-size: 0.9rem; color: #666; }
+
+        /* Om oss & Kontakt */
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .info-box {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .info-box h3 { margin-bottom: 15px; color: var(--red); }
+        .info-box p { margin-bottom: 10px; }
+
+        /* Mobil-spesifikt */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--green);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-decoration: none;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        }
+
+        @media (max-width: 768px) {
+            nav { display: none; } /* Enkel versjon: Gøymer meny på liten skjerm for å spare plass */
+            .hero h1 { font-size: 2.5rem; }
+            .info-grid { grid-template-columns: 1fr; }
+            .mobile-cta { display: block; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="logo">Det Lille Napoli</a>
+        <nav>
+            <a href="#meny">Meny</a>
+            <a href="#om">Om oss</a>
+            <a href="#kontakt">Kontakt & Opningstider</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="forside">
+        <h1>Velkomen til Det Lille Napoli</h1>
+        <p>Restaurant og Pizzabar i Ørsta. Vi tilbyr smakfull pizza, pasta, biff og mykje meir.</p>
+        <a href="tel:+4793676087" class="btn">Ring 93 67 60 87 for bestilling</a>
+    </section>
+
+    <section id="meny">
+        <h2>Vår Meny (Utdrag)</h2>
+        
+        <div class="menu-category">
+            <h3>Pizza (Liten / Stor)</h3>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-header"><span>1. Margherita</span><span>129,- / 219,-</span></div>
+                    <div class="menu-desc">Ost</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>2. Vesuvio</span><span>149,- / 239,-</span></div>
+                    <div class="menu-desc">Skinke</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>10. Ørsta spesial</span><span>159,- / 259,-</span></div>
+                    <div class="menu-desc">Biff, sjampinjong, løk, bearnaisesaus</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>13. Kebabpizza</span><span>169,- / 269,-</span></div>
+                    <div class="menu-desc">Biff, løk, salat, tomat, agurk, kvitløkssaus</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h3>A la carte & Pasta</h3>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-header"><span>40. Pepperbiff</span><span>289,-</span></div>
+                    <div class="menu-desc">Indrefilet, peppersaus, broccoli, fløtegratinerte poteter/chips</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>49. Biffsnadder</span><span>239,-</span></div>
+                    <div class="menu-desc">Strimla indrefilet, sopp, løk, paprika, bearnaisesaus, chips</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>34. Spaghetti a la bolognese</span><span>169,-</span></div>
+                    <div class="menu-desc">Spaghetti med kjøttsaus, parmesan, brød og smør</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>35. Spaghetti a la carbonara</span><span>169,-</span></div>
+                    <div class="menu-desc">Spaghetti med bacon, fløte, parmesan, løk, svart pepper</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="menu-category">
+            <h3>Kebab & Burger</h3>
+            <div class="menu-grid">
+                <div class="menu-item">
+                    <div class="menu-header"><span>53. Kebabtallerken</span><span>199,-</span></div>
+                    <div class="menu-desc">Biffkjøtt, salat, løk, kvitløkssaus, chips</div>
+                </div>
+                <div class="menu-item">
+                    <div class="menu-header"><span>65. Hamburgertallerken (200g)</span><span>159,-</span></div>
+                    <div class="menu-desc">Med salat, dressing og chips</div>
+                </div>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 20px;"><em>Sjå heile vår fulle meny med over 70 rettar i restauranten! Vi har også barnemeny.</em></p>
+    </section>
+
+    <section id="kontakt" style="background-color: var(--white);">
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>📍 Om Oss & Kontakt</h3>
+                <p><strong>Det Lille Napoli</strong> ligg sentralt plassert i eit sjarmerande, kvitt trehus i Ørsta. Her kan du nyte eit godt måltid i koselege lokal, eller ta med deg maten heim.</p>
+                <br>
+                <p><strong>Telefon:</strong> 93 67 60 87</p>
+                <p><strong>Kontaktperson:</strong> Mikkel Johann Olsen</p>
+                <p><strong>Adresse:</strong> Ørsta Sentrum</p>
+            </div>
+            
+            <div class="info-box" id="om">
+                <h3>🕒 Opningstider</h3>
+                <p><strong>Måndag:</strong> 14:00 – 22:00</p>
+                <p><strong>Tysdag:</strong> 14:00 – 22:00</p>
+                <p><strong>Onsdag:</strong> 14:00 – 22:00</p>
+                <p><strong>Torsdag:</strong> 14:00 – 22:00</p>
+                <p><strong>Fredag:</strong> 14:00 – 22:00</p>
+                <p><strong>Laurdag:</strong> 14:00 – 22:00</p>
+                <p><strong>Søndag:</strong> 14:00 – 22:00</p>
+            </div>
+        </div>
+    </section>
+
+    <a href="tel:+70065020" class="mobile-cta">📞 Ring 70 06 50 20 for bestilling</a>
+
+</body>
+</html>
