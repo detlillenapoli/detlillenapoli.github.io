@@ -3,189 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Det Lille Napoli | Restaurant og Pizzabar i Ørsta</title>
-    <meta name="description" content="Autentisk pizza, pasta og a la carte i hjartet av Ørsta. Ring 93676087 for å bestille takeaway eller reservere bord!">
+    <title>Det Lille Napoli | Ørsta</title>
+    <meta name="description" content="Autentisk pizza, pasta og a la carte i hjartet av Ørsta. Ring 70 06 50 20 for å bestille takeaway eller reservere bord!">
     <style>
-        /* Grunnleggande design og fargar */
         :root {
             --red: #c62828;
             --green: #2e7d32;
             --white: #ffffff;
-            --dark: #333333;
-            --light-bg: #f9f9f9;
+            --dark: #1a1a1a;
+            --light-bg: #fdfdfd;
         }
         
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
+        body { color: var(--dark); background-color: var(--light-bg); line-height: 1.6; padding-bottom: 80px; }
 
-        body {
-            color: var(--dark);
-            background-color: var(--light-bg);
-            line-height: 1.6;
-            padding-bottom: 70px; /* Plass til mobil-knapp */
-        }
-
-        /* Navigasjon */
-        header {
-            background-color: var(--white);
-            padding: 15px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--red);
-            text-decoration: none;
-            font-family: 'Georgia', serif;
-            font-style: italic;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: var(--dark);
-            margin-left: 20px;
-            font-weight: 500;
-        }
-
+        header { background-color: var(--white); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: fixed; width: 100%; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        .logo { font-size: 26px; font-weight: bold; color: var(--red); text-decoration: none; font-style: italic; }
+        nav a { text-decoration: none; color: var(--dark); margin-left: 20px; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; }
         nav a:hover { color: var(--green); }
 
-        /* Hero-seksjon (Forside) */
-        .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1574071318508-1cdbab80d002?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            color: var(--white);
-            padding: 0 20px;
-            margin-top: 60px;
+        .hero { 
+            height: 70vh; 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('restaurant.jpg') center/cover; 
+            display: flex; flex-direction: column; justify-content: center; align-items: center; 
+            text-align: center; color: var(--white); padding: 0 20px; margin-top: 60px;
         }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 10px; font-style: italic; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; max-width: 700px; }
+        .btn { background-color: var(--red); color: var(--white); padding: 18px 35px; text-decoration: none; font-size: 1.3rem; font-weight: bold; border-radius: 50px; transition: 0.3s; box-shadow: 0 4px 15px rgba(198, 40, 40, 0.4); }
+        .btn:hover { background-color: #b71c1c; transform: translateY(-2px); }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 10px;
-            font-family: 'Georgia', serif;
-            font-style: italic;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 600px;
-        }
-
-        .btn {
-            background-color: var(--red);
-            color: var(--white);
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: background 0.3s;
-            display: inline-block;
-        }
-
-        .btn:hover { background-color: #b71c1c; }
-
-        /* Seksjonar generelt */
-        section {
-            padding: 80px 5%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            color: var(--green);
-        }
-
-        /* Meny-grid */
-        .menu-category { margin-bottom: 40px; }
-        .menu-category h3 {
-            border-bottom: 2px solid var(--red);
-            padding-bottom: 10px;
-            margin-bottom: 20px;
-            color: var(--dark);
-        }
+        section { padding: 60px 5%; max-width: 1100px; margin: 0 auto; }
+        h2 { text-align: center; font-size: 2.8rem; margin-bottom: 40px; color: var(--green); position: relative; padding-bottom: 10px; }
+        h2::after { content: ''; width: 80px; height: 4px; background: var(--red); position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); }
         
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
+        .menu-category { margin-bottom: 60px; }
+        .menu-category h3 { color: var(--white); background: var(--green); display: inline-block; padding: 5px 20px; border-radius: 5px; margin-bottom: 25px; font-size: 1.6rem; }
+        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .menu-item { background: var(--white); padding: 18px; border-radius: 8px; border: 1px solid #eee; transition: 0.2s; position: relative; overflow: hidden; }
+        .menu-item:hover { border-color: var(--green); box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .menu-header { display: flex; justify-content: space-between; font-weight: bold; font-size: 1.1rem; color: #000; margin-bottom: 6px; }
+        .price { color: var(--red); }
+        .menu-desc { font-size: 0.9rem; color: #666; font-style: italic; }
+        
+        .food-image-container { text-align: center; margin: 40px 0; }
+        .menu-image { width: 100%; max-width: 500px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
 
-        .menu-item {
-            background: var(--white);
-            padding: 15px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
+        .info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 40px; }
+        .info-box { background: var(--white); padding: 35px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border-top: 5px solid var(--red); }
+        .info-box h3 { margin-bottom: 20px; font-size: 1.5rem; color: var(--green); }
+        .info-box p { margin-bottom: 12px; font-size: 1.05rem; }
+        .hours-row { display: flex; justify-content: space-between; border-bottom: 1px dashed #eee; padding: 5px 0; }
 
-        .menu-header {
-            display: flex;
-            justify-content: space-between;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .menu-desc { font-size: 0.9rem; color: #666; }
-
-        /* Om oss & Kontakt */
-        .info-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-        }
-
-        .info-box {
-            background: var(--white);
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .info-box h3 { margin-bottom: 15px; color: var(--red); }
-        .info-box p { margin-bottom: 10px; }
-
-        /* Mobil-spesifikt */
-        .mobile-cta {
-            display: none;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: var(--green);
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            z-index: 1000;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-        }
+        .mobile-cta { display: none; position: fixed; bottom: 0; left: 0; width: 100%; background-color: var(--green); color: white; text-align: center; padding: 20px; font-size: 1.3rem; font-weight: bold; text-decoration: none; z-index: 2000; box-shadow: 0 -4px 20px rgba(0,0,0,0.3); }
 
         @media (max-width: 768px) {
-            nav { display: none; } /* Enkel versjon: Gøymer meny på liten skjerm for å spare plass */
-            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; }
+            .hero h1 { font-size: 2.4rem; }
             .info-grid { grid-template-columns: 1fr; }
             .mobile-cta { display: block; }
         }
@@ -197,105 +71,154 @@
         <a href="#" class="logo">Det Lille Napoli</a>
         <nav>
             <a href="#meny">Meny</a>
-            <a href="#om">Om oss</a>
-            <a href="#kontakt">Kontakt & Opningstider</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="#tider">Opningstider</a>
         </nav>
     </header>
 
-    <section class="hero" id="forside">
-        <h1>Velkomen til Det Lille Napoli</h1>
-        <p>Restaurant og Pizzabar i Ørsta. Vi tilbyr smakfull pizza, pasta, biff og mykje meir.</p>
-        <a href="tel:+4793676087" class="btn">Ring 93 67 60 87 for bestilling</a>
+    <section class="hero">
+        <h1>Det Lille Napoli</h1>
+        <p>Autentisk smak og god atmosfære midt i Ørsta. Velkomen til ein hyggelig matopplevelse!</p>
+        <a href="tel:+4770065020" class="btn">Ring 70 06 50 20 for bestilling</a>
     </section>
 
     <section id="meny">
-        <h2>Vår Meny (Utdrag)</h2>
+        <h2>Vår Meny</h2>
         
         <div class="menu-category">
-            <h3>Pizza (Liten / Stor)</h3>
+            <h3>Pizza</h3>
             <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-header"><span>1. Margherita</span><span>129,- / 219,-</span></div>
-                    <div class="menu-desc">Ost</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-header"><span>2. Vesuvio</span><span>149,- / 239,-</span></div>
-                    <div class="menu-desc">Skinke</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-header"><span>10. Ørsta spesial</span><span>159,- / 259,-</span></div>
-                    <div class="menu-desc">Biff, sjampinjong, løk, bearnaisesaus</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-header"><span>13. Kebabpizza</span><span>169,- / 269,-</span></div>
-                    <div class="menu-desc">Biff, løk, salat, tomat, agurk, kvitløkssaus</div>
-                </div>
+                <div class="menu-item"><div class="menu-header"><span>1. Margherita</span><span class="price">129,- / 219,-</span></div><div class="menu-desc">Ost</div></div>
+                <div class="menu-item"><div class="menu-header"><span>2. Vesuvio</span><span class="price">149,- / 239,-</span></div><div class="menu-desc">Skinke</div></div>
+                <div class="menu-item"><div class="menu-header"><span>3. Hawaii</span><span class="price">149,- / 239,-</span></div><div class="menu-desc">Skinke, ananas</div></div>
+                <div class="menu-item"><div class="menu-header"><span>4. Capricosa</span><span class="price">149,- / 239,-</span></div><div class="menu-desc">Skinke, sjampinjong</div></div>
+                <div class="menu-item"><div class="menu-header"><span>5. Vegetar</span><span class="price">139,- / 239,-</span></div><div class="menu-desc">Sjampinjong, paprika, løk, tomat, mais, ananas</div></div>
+                <div class="menu-item"><div class="menu-header"><span>6. Milano</span><span class="price">149,- / 239,-</span></div><div class="menu-desc">Pepperoni, paprika, ananas</div></div>
+                <div class="menu-item"><div class="menu-header"><span>7. Opera</span><span class="price">169,- / 269,-</span></div><div class="menu-desc">Pepperoni, kylling, kjøttdeig, løk</div></div>
+                <div class="menu-item"><div class="menu-header"><span>8. Roma</span><span class="price">149,- / 249,-</span></div><div class="menu-desc">Skinke, kjøttdeig, ananas</div></div>
+                <div class="menu-item"><div class="menu-header"><span>9. Torino</span><span class="price">149,- / 249,-</span></div><div class="menu-desc">Pepperoni, skinke</div></div>
+                <div class="menu-item"><div class="menu-header"><span>10. Ørsta spesial</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Biff, sjampinjong, løk, bearnaisesaus</div></div>
+                <div class="menu-item"><div class="menu-header"><span>11. Husets spesial</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Biff, paprika, løk, kvitløkssaus</div></div>
+                <div class="menu-item"><div class="menu-header"><span>12. Vartdal</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Pepperoni, skinke, kjøttdeig, løk</div></div>
+                <div class="menu-item"><div class="menu-header"><span>13. Kebabpizza</span><span class="price">169,- / 269,-</span></div><div class="menu-desc">Biff, løk, salat, tomat, agurk, kvitløkssaus</div></div>
+                <div class="menu-item"><div class="menu-header"><span>14. Pizza con pollo</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Marinert kylling, kjøttdeig, champ, løk</div></div>
+                <div class="menu-item"><div class="menu-header"><span>15. Sæbø spesial</span><span class="price">169,- / 269,-</span></div><div class="menu-desc">Biff, kjøttdeig, bacon, løk, paprika, champ</div></div>
+                <div class="menu-item"><div class="menu-header"><span>16. Italiano spesial</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Biff, kjøttdeig, løk, ananas</div></div>
+                <div class="menu-item"><div class="menu-header"><span>17. Mama Rosa</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Biff, pepperoni, løk, ananas</div></div>
+                <div class="menu-item"><div class="menu-header"><span>18. Napoli spesial</span><span class="price">169,- / 269,-</span></div><div class="menu-desc">Biff, pepperoni, bacon, løk</div></div>
+                <div class="menu-item"><div class="menu-header"><span>19. Volda spesial</span><span class="price">169,- / 269,-</span></div><div class="menu-desc">Skinke, kjøttdeig, biff</div></div>
+                <div class="menu-item"><div class="menu-header"><span>20. Picasso</span><span class="price">189,- / 289,-</span></div><div class="menu-desc">Kjøttdeig, kylling, pepperoni, biff, bacon, løk, sjampinjong</div></div>
+                <div class="menu-item"><div class="menu-header"><span>21. Bøstrand spesial</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Pepperoni, kjøttdeig, biff</div></div>
+                <div class="menu-item"><div class="menu-header"><span>22. Kyllingpizza</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Kylling, paprika, løk</div></div>
+                <div class="menu-item"><div class="menu-header"><span>23. Ivar Aasen spesial</span><span class="price">179,- / 279,-</span></div><div class="menu-desc">Skinke, biff, kjøttdeig, bacon, løk, ananas</div></div>
             </div>
         </div>
 
         <div class="menu-category">
-            <h3>A la carte & Pasta</h3>
+            <h3>Innbakt & Sterk Pizza</h3>
             <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-header"><span>40. Pepperbiff</span><span>289,-</span></div>
-                    <div class="menu-desc">Indrefilet, peppersaus, broccoli, fløtegratinerte poteter/chips</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-header"><span>49. Biffsnadder</span><span>239,-</span></div>
-                    <div class="menu-desc">Strimla indrefilet, sopp, løk, paprika, bearnaisesaus, chips</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-header"><span>34. Spaghetti a la bolognese</span><span>169,-</span></div>
-                    <div class="menu-desc">Spaghetti med kjøttsaus, parmesan, brød og smør</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-header"><span>35. Spaghetti a la carbonara</span><span>169,-</span></div>
-                    <div class="menu-desc">Spaghetti med bacon, fløte, parmesan, løk, svart pepper</div>
-                </div>
+                <div class="menu-item"><div class="menu-header"><span>24. Calzone (Skinke, ost)</span><span class="price">139,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>25. Calzone (Skinke, kjøttdeig, løk)</span><span class="price">149,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>26. Innbakt kebab</span><span class="price">159,-</span></div><div class="menu-desc">Ost, biffkjøtt, rødløk, salat, agurk, kvitløksdressing</div></div>
+                <div class="menu-item"><div class="menu-header"><span>27. Tacopizza</span><span class="price">149,- / 249,-</span></div><div class="menu-desc">Kjøttdeig, løk, tacosaus, jalapenos</div></div>
+                <div class="menu-item"><div class="menu-header"><span>28. Mexicana</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Biff, løk, tacosaus, jalapenos</div></div>
+                <div class="menu-item"><div class="menu-header"><span>29. Indiana</span><span class="price">149,- / 249,-</span></div><div class="menu-desc">Pepperoni, paprika, tacosaus, jalapenos</div></div>
+                <div class="menu-item"><div class="menu-header"><span>30. Amigo</span><span class="price">169,- / 269,-</span></div><div class="menu-desc">Pepperoni, kjøttdeig, kylling, nachos, skinke, jalapenos</div></div>
+                <div class="menu-item"><div class="menu-header"><span>31. Nachos pizza</span><span class="price">149,- / 249,-</span></div><div class="menu-desc">Kjøttdeig, løk, paprika, tacosaus, jalapenos, nachos</div></div>
+                <div class="menu-item"><div class="menu-header"><span>32. Taxi</span><span class="price">149,- / 249,-</span></div><div class="menu-desc">Pepperoni, kjøttdeig, mais, jalapenos</div></div>
+                <div class="menu-item"><div class="menu-header"><span>33. Acapulka</span><span class="price">159,- / 259,-</span></div><div class="menu-desc">Kjøttdeig, biff, løk, tacosaus, meksikansk krydder</div></div>
             </div>
         </div>
-        
+
+        <div class="food-image-container">
+            <img src="mat.jpg" alt="Matservering" class="menu-image">
+        </div>
+
         <div class="menu-category">
-            <h3>Kebab & Burger</h3>
+            <h3>Pasta</h3>
             <div class="menu-grid">
-                <div class="menu-item">
-                    <div class="menu-header"><span>53. Kebabtallerken</span><span>199,-</span></div>
-                    <div class="menu-desc">Biffkjøtt, salat, løk, kvitløkssaus, chips</div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-header"><span>65. Hamburgertallerken (200g)</span><span>159,-</span></div>
-                    <div class="menu-desc">Med salat, dressing og chips</div>
-                </div>
+                <div class="menu-item"><div class="menu-header"><span>34. Spaghetti bolognese</span><span class="price">169,-</span></div><div class="menu-desc">Kjøttsaus, parmesan, brød og smør</div></div>
+                <div class="menu-item"><div class="menu-header"><span>35. Spaghetti carbonara</span><span class="price">169,-</span></div><div class="menu-desc">Bacon, fløte, parmesan, løk, egg, brød, smør</div></div>
+                <div class="menu-item"><div class="menu-header"><span>36. Ravioli a la fellini</span><span class="price">169,-</span></div><div class="menu-desc">Kjøttfylte pastaruller med skinke, parmesan, paprika, løk</div></div>
+                <div class="menu-item"><div class="menu-header"><span>37. Ravioli di Pollo</span><span class="price">169,-</span></div><div class="menu-desc">Pasta fylt med kylling og parmesan i karrisaus</div></div>
+                <div class="menu-item"><div class="menu-header"><span>38. Don Alfredo</span><span class="price">169,-</span></div><div class="menu-desc">Penne, ytrefilet, fløte, parmesan, sjampinjong, paprika</div></div>
+                <div class="menu-item"><div class="menu-header"><span>39. Don Simone</span><span class="price">169,-</span></div><div class="menu-desc">Penne, fløtesaus, strimla kyllingfilet, brød, smør</div></div>
             </div>
         </div>
-        <p style="text-align: center; margin-top: 20px;"><em>Sjå heile vår fulle meny med over 70 rettar i restauranten! Vi har også barnemeny.</em></p>
+
+        <div class="menu-category">
+            <h3>A la carte</h3>
+            <p style="margin-bottom: 20px;"><em>Alle biffrettar serverast med fløtegratinerte poteter eller chips.</em></p>
+            <div class="menu-grid">
+                <div class="menu-item"><div class="menu-header"><span>40. Pepperbiff</span><span class="price">289,-</span></div><div class="menu-desc">Indrefilet, peppersaus, broccoli</div></div>
+                <div class="menu-item"><div class="menu-header"><span>41. Biff con Berne</span><span class="price">289,-</span></div><div class="menu-desc">Indrefilet, steikt løk, bearnaisesaus, broccoli</div></div>
+                <div class="menu-item"><div class="menu-header"><span>42. Gresk biff</span><span class="price">289,-</span></div><div class="menu-desc">Indrefilet, kvitløksaus, steikt tomat, broccoli</div></div>
+                <div class="menu-item"><div class="menu-header"><span>43. Black & White</span><span class="price">289,-</span></div><div class="menu-desc">2 stk indrefilet, peppersaus, bearnaisesaus, broccoli</div></div>
+                <div class="menu-item"><div class="menu-header"><span>44. Biff a la Napoli</span><span class="price">289,-</span></div><div class="menu-desc">Indrefilet, sjampinjong, løk, paprika, rødvinssaus</div></div>
+                <div class="menu-item"><div class="menu-header"><span>45. Biff a la Viva</span><span class="price">289,-</span></div><div class="menu-desc">Indrefilet, sjampinjong, fløtesaus, broccoli</div></div>
+                <div class="menu-item"><div class="menu-header"><span>46. Meksikansk biff</span><span class="price">289,-</span></div><div class="menu-desc">Indrefilet, jalapenos, løk, paprika, sjampinjong</div></div>
+                <div class="menu-item"><div class="menu-header"><span>49. Biffsnadder</span><span class="price">239,-</span></div><div class="menu-desc">Indrefilet, sopp, løk, paprika, bearnaisesaus, chips</div></div>
+                <div class="menu-item"><div class="menu-header"><span>50. Kvitløksnadder</span><span class="price">239,-</span></div><div class="menu-desc">Indrefilet, sopp, løk, paprika, kvitløkssaus, chips</div></div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h3>Kebab & Salat</h3>
+            <div class="menu-grid">
+                <div class="menu-item"><div class="menu-header"><span>53. Kebabtallerken</span><span class="price">199,-</span></div><div class="menu-desc">Biffkjøtt, salat, løk, kvitløkssaus, chips</div></div>
+                <div class="menu-item"><div class="menu-header"><span>54. Kyllingkebabtallerken</span><span class="price">199,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>55. Napoli spesial kebab</span><span class="price">229,-</span></div><div class="menu-desc">Biff og kylling, sjampinjong, chips, tacosaus</div></div>
+                <div class="menu-item"><div class="menu-header"><span>56. Rullekebab</span><span class="price">149,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>57. Kylling rullekebab</span><span class="price">149,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>58. Kebab i pita</span><span class="price">139,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>60. Kebabsalat</span><span class="price">169,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>61. Kyllingsalat</span><span class="price">169,-</span></div></div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h3>Hamburger & Barnemeny</h3>
+            <div class="menu-grid">
+                <div class="menu-item"><div class="menu-header"><span>63. Hamburger</span><span class="price">119,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>64. Cheeseburger</span><span class="price">129,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>65. Hamburgertallerken</span><span class="price">159,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>66. Cheeseburgertallerken</span><span class="price">169,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>67. Baconcheeseburger tall.</span><span class="price">179,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>68. Pølse med chips</span><span class="price">80,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>70. Hamburger m/ chips (barn)</span><span class="price">90,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>72. Barnepizza</span><span class="price">90,-</span></div></div>
+                <div class="menu-item"><div class="menu-header"><span>73. Spaghetti m/ kjøttsaus</span><span class="price">90,-</span></div></div>
+            </div>
+        </div>
     </section>
 
-    <section id="kontakt" style="background-color: var(--white);">
+    <section id="kontakt">
+        <h2>Kontakt & Info</h2>
         <div class="info-grid">
             <div class="info-box">
-                <h3>📍 Om Oss & Kontakt</h3>
-                <p><strong>Det Lille Napoli</strong> ligg sentralt plassert i eit sjarmerande, kvitt trehus i Ørsta. Her kan du nyte eit godt måltid i koselege lokal, eller ta med deg maten heim.</p>
+                <h3>📍 Finn oss</h3>
+                <p><strong>Det Lille Napoli</strong></p>
+                <p>Ørsta Sentrum</p>
+                <p>6150 Ørsta</p>
                 <br>
-                <p><strong>Telefon:</strong> 93 67 60 87</p>
-                <p><strong>Kontaktperson:</strong> Mikkel Johann Olsen</p>
-                <p><strong>Adresse:</strong> Ørsta Sentrum</p>
+                <p><strong>Telefon:</strong> 70 06 50 20</p>
+                <p><strong>Kontaktperson:</strong> Claudiu Alexe</p>
             </div>
             
-            <div class="info-box" id="om">
+            <div class="info-box" id="tider">
                 <h3>🕒 Opningstider</h3>
-                <p><strong>Måndag:</strong> 14:00 – 22:00</p>
-                <p><strong>Tysdag:</strong> 14:00 – 22:00</p>
-                <p><strong>Onsdag:</strong> 14:00 – 22:00</p>
-                <p><strong>Torsdag:</strong> 14:00 – 22:00</p>
-                <p><strong>Fredag:</strong> 14:00 – 22:00</p>
-                <p><strong>Laurdag:</strong> 14:00 – 22:00</p>
-                <p><strong>Søndag:</strong> 14:00 – 22:00</p>
+                <div class="hours-row"><span>Måndag</span><span>14:00 - 22:00</span></div>
+                <div class="hours-row"><span>Tysdag</span><span>14:00 - 22:00</span></div>
+                <div class="hours-row"><span>Onsdag</span><span>14:00 - 22:00</span></div>
+                <div class="hours-row"><span>Torsdag</span><span>14:00 - 22:00</span></div>
+                <div class="hours-row"><span>Fredag</span><span>14:00 - 22:00</span></div>
+                <div class="hours-row"><span>Laurdag</span><span>14:00 - 22:00</span></div>
+                <div class="hours-row"><span>Søndag</span><span>14:00 - 22:00</span></div>
             </div>
         </div>
     </section>
 
-    <a href="tel:+70065020" class="mobile-cta">📞 Ring 70 06 50 20 for bestilling</a>
+    <a href="tel:+4770065020" class="mobile-cta">📞 Ring 70 06 50 20 for bestilling</a>
 
 </body>
 </html>
